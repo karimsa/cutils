@@ -10,7 +10,7 @@
 
 module.exports = {
     R: {
-      fn: require('./lib/fn.js')
+      fn: require('./lib/R/fn.js')
     }
   , tree: require('./lib/tree/index.js')
 }
