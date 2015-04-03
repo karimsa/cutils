@@ -10,7 +10,7 @@ var f = function (n) {
 
 test('test Fibonacci timing', function (t) {
   t.plan(1)
-  var N = Math.floor((Math.random() * 10) + 25)
+  var N = Math.floor((Math.random() * 10) + 30)
 
   var s = time()
   f(N)
@@ -22,6 +22,6 @@ test('test Fibonacci timing', function (t) {
   f(N)
   var ttn = time() - sn
 
-  console.log('first time: %s\nsecond time: %s', tt, ttn)
+  console.log('first time: %sms\nsecond time: %sms', tt, ttn)
   t.ok(tt > ttn, 'wrapper is faster')
 })
