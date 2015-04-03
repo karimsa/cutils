@@ -1,5 +1,5 @@
 var test = require('tape')
-var cutils = require('../')
+var _ = require('../')
 
 var time = function () { return +new Date }
 var f = function (n) {
@@ -16,7 +16,7 @@ test('test Fibonacci timing', function (t) {
   f(N)
   var tt = time() - s
 
-  f = cutils.R.fn(f)
+  f = _.fn(f)
 
   var sn = time()
   f(N)
