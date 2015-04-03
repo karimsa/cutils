@@ -9,10 +9,8 @@
 "use strict";
 
 module.exports = {
-  // recursion utils
-    R: {
-      fn: require('./lib/R/fn.js')
-    }
+  // no side-effect function
+  fn: require('./lib/fn.js')
 
   // some graph stuff
   , tree: require('./lib/graph/tree.js')
@@ -25,7 +23,5 @@ module.exports = {
   // adding these things to the prototype slows
   // things down too much; and these are speedier
   // implementations
-  , strings: {
-      startsWith: require('./lib/strings/startsWith.js')
-    }
+  , startsWith: require('./lib/strings/startsWith.js')
 }
