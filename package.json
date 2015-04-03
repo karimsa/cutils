@@ -1,0 +1,29 @@
+{
+  "name": "cutils",
+  "version": "0.0.1",
+  "description": "some programming utilities for the contest.",
+  "main": "index.js",
+  "engines": {
+    "node": "0.12"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tape test/test-*.js | colortape"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/vbka/cutils.git"
+  },
+  "keywords": [
+    "utilities",
+    "contest"
+  ],
+  "author": "Karim Alibhai, Valen Varangu-Booth",
+  "license": "MIT",
+  "devDependencies": {
+    "colortape": "^0.1.1",
+    "tape": "^3.5.0"
+  }
+}
