@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "some programming utilities for the contest.",
   "main": "index.js",
+  "bin": {
+    "cinit": "./bin/cinit"
+  },
   "engines": {
     "node": "0.12"
   },

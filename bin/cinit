@@ -1,0 +1,48 @@
+#!/bin/bash
+
+## cinit.sh
+## start a new contest "project"
+##
+## Copyright (C) 2015 Karim Alibhai.
+## Copyright (C) 2015 Valen Varangu Booth.
+
+## do it based on year
+year="$1"
+if [ -z "$year" ];then
+  echo "Please specify a year."
+  exit 1
+fi
+
+## setup
+mkdir ${year}
+cd ${year}
+
+## make data files
+touch DATA11.txt DATA21.txt DATA31.txt DATA41.txt
+
+## make programs
+for((i=1;i<5;i++));do
+cat >> s${i}.js << _EOF
+// s${i}.js
+//
+// Created by: WSS.JS
+
+var _ = require('cutils')
+
+_.describe({
+  num: ${i},
+  try: 1,
+  format: [
+    '%s'
+  ],
+  fn: function (input, next) {
+    // TODO: write logic
+
+    next();
+  }
+})
+_EOF
+done
+
+## install cutils
+npm i git+ssh://git@bitbucket.org/vbka/cutils.git
