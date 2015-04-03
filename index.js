@@ -12,6 +12,7 @@ module.exports = {
     R: {
       fn: require('./lib/R/fn.js')
     }
-  , tree: require('./lib/tree/index.js')
+  , tree: require('./lib/graph/tree.js')
+  , graph: require('./lib/graph/index.js')
   , describe: require('./lib/io.js')
 }
