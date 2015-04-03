@@ -10,7 +10,7 @@ var f = function (n) {
 
 test('test Fibonacci timing', function (t) {
   t.plan(1)
-  var N = Math.floor((Math.random() * 10) + 20)
+  var N = Math.floor((Math.random() * 10) + 25)
 
   var s = time()
   f(N)

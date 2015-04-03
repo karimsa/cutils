@@ -13,4 +13,5 @@ module.exports = {
       fn: require('./lib/R/fn.js')
     }
   , tree: require('./lib/tree/index.js')
+  , describe: require('./lib/io.js')
 }
