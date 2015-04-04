@@ -96,6 +96,8 @@ _.seal(g)
 var walk = g.walk('a', 'c')
 ```
 
+*Busting the cache: just pass a random value as an argument to the function you're calling. i.e. to bust the cache for the 5th fibonacci term, run: fib(5, 'random').*
+
 ## Graph Theory
 
 Graphs are pretty simple structures in this utility set; you just create them, and add vertices and
@@ -130,14 +132,15 @@ g.edge('a', 'b', 5)
  - **deg([vertex])**: calculate the degree of vertex 'vertex'. (returns number)
  - **edgesOf([vertex])**: get the edge set related to 'vertex'. (returns array)
  - **min([edges])**: find the minimum weighted edge in a set of edges. (returns array where [0] is the index of the edge and [1] is the edge)
- - **walk([from], [to])**: find a walk from one vertex to another; not always the shortest walk. (returns array of vertices to visit, or null if no possible walk exists)
+ - **walk([from], [to])**: find a walk from one vertex to another; not always the shortest walk. (returns array of vertices to visit, or null if no
+possible walk exists)
  - **algo([name])**: creates a callback for the given algorithm. (returns callback)
  - **matrix([type])**: get the respective matrix of the graph. (returns a square 2D array)
 
 ### algorithms
 
-some graph theory algorithms for generalized usage. *all these methods are wrapped with a function cache with no way to bust the cache; changing the graph
-after creating one of these callbacks is pointless*.
+some graph theory algorithms for generalized usage. *all these methods are wrapped with a function cache, changing the graph after creating one of
+these callbacks is pointless*.
 
 #### Kruskal's
 
