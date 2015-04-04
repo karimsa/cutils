@@ -8,6 +8,7 @@ test('test io', function (t) {
     num: 4,
     try: 2,
     dir: __dirname,
+    exit: false,
     format: ['%d %w %f %s'],
     fn: function (input, next) {
       // keep only first line
