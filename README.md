@@ -145,6 +145,18 @@ var T = K()
 
 #### Prim's
 
+Find a minimum weight spanning tree by greedy selecting lowest connected edge:
+
+```javascript
+var G = _.graph()
+var P = G.algo('prim')
+
+// creates a new graph with only
+// smallest weighted edges - it will
+// be a graph object but it is a tree
+var T = P('vertex')
+```
+
 #### Dijkstra's
 
 #### A*
