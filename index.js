@@ -9,8 +9,9 @@
 "use strict";
 
 module.exports = {
-  // no side-effect function
-  fn: require('./lib/fn.js')
+  // no side-effects functions
+    fn: require('./lib/fn.js')
+  , seal: require('./lib/seal.js')
 
   // some graph stuff
   , tree: require('./lib/graph/tree.js')
