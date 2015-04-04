@@ -20,6 +20,7 @@ Available options:
  - **num**: the number of the problem. (1-4; default: 1)
  - **try**: the number of the try. (1/2; default: 1)
  - **file**: the exact filename of the data file. (default: DATA[num][try].txt; specify for override)
+ - **exit**: setting this to false will stop the exiting of node when the full case file is processed. (default: true; useful for tests)
  - **dir**: the path to the directory in which the data file is stored. (default: ./; specify for override)
  - **format**: an array specifying how to format the input. each item in the array is treated as a line of input, every modifier must be preceeded with '%' and any unknown modifiers will cause an error. the formatting modifiers include: s (rest of line as a string), w (single word as a string), d (single word as a base 10 integer), and f (single word as a float). (default: ['%s'])
  - **fn**: a function containing your solving logic. it will be passed two parameters, an array of arrays formatted data and a callback. (no defaults, therefore an exception will be thrown if this is not given)
@@ -115,14 +116,23 @@ g.edge('a', 'b', 5)
 
 ### properties
 
+ - **vertices**: array of vertices in the graph.
+ - **edges**: array of edges in the graph.
  - **weight**: the total weight of the tree. (irrelevant for non-tree graphs)
 
 ### methods
 
  - **add([name])**: create a new vertex. (returns graph)
+ - **delete([vertex])**: create a graph with all vertices+edges except 'vertex'. (returns new graph)
  - **edge([vertex], [vertex], [weight])**: create a new edge [possibly weighted]. (returns graph)
+ - **size()**: get the size of the graph. (returns number)
+ - **order()**: get the order of the graph. (returns number)
+ - **deg([vertex])**: calculate the degree of vertex 'vertex'. (returns number)
+ - **edgesOf([vertex])**: get the edge set related to 'vertex'. (returns array)
+ - **min([edges])**: find the minimum weighted edge in a set of edges. (returns array where [0] is the index of the edge and [1] is the edge)
  - **walk([from], [to])**: find a walk from one vertex to another; not always the shortest walk. (returns array of vertices to visit, or null if no possible walk exists)
  - **algo([name])**: creates a callback for the given algorithm. (returns callback)
+ - **matrix([type])**: get the respective matrix of the graph. (returns a square 2D array)
 
 ### algorithms
 
@@ -158,5 +168,18 @@ var T = P('vertex')
 ```
 
 #### Dijkstra's
+
+Find the shortest path between two vertices:
+
+```javascript
+var G = _.graph()
+var D = G.algo('dijkstra')
+
+// creates an array of vertices in the
+// order they should be followed in the
+// shortest path from A to B
+// will return null if path is not possible
+var path = D('A', 'B')
+```
 
 #### A*
