@@ -48,14 +48,12 @@ _.describe({
 })
 ```
 
-## Recursion
-
-### Computation Expense
+## No Side-Effect Functions
 
 Recursion algorithms can get really expensive (time consuming) really easily,
 and aside from maximizing the number of special cases in the algorithm, the easiest
 and perhaps best workaround is to cache all results (and therefore treat the function
-as a mathematical function).
+as a mathematical function; one with no side effects).
 
 Example:
 
@@ -70,9 +68,83 @@ var fib = function (n) {
 }
 
 // wrap it off
-fib = _.R.fn(fib);
+fib = _.fn(fib);
 ```
 
-## Trees
+Sometimes this strategy can be helpful with entire objects too, such as when you construct
+a new graph and are about to start running algorithms on it. If your class has been programmed
+for no side-effects (assuming that important factors such as the graph vertices and edges remains
+consistent), then it may help to "seal" the class' methods with their own caches:
 
-.. stuff to come ..
+Example:
+
+```javascript
+var _ = require('cutils')
+var g = _.graph()
+
+// create your graph
+g
+  .edge('a', 'b')
+  .edge('b', 'c')
+  .edge('c', 'a')
+
+// seal it
+_.seal(g)
+
+// now run your algorithms
+var walk = g.walk('a', 'c')
+```
+
+## Graph Theory
+
+Graphs are pretty simple structures in this utility set; you just create them, and add vertices and
+edges. If you add an edge, any related vertices that have not yet been added will be added automatically.
+
+```javascript
+var _ = require('cutils')
+var g = _.graph()
+
+// this:
+g.add('a')
+g.add('b')
+g.edge('a', 'b', 5)
+
+// is the same as this:
+g.edge('a', 'b', 5)
+```
+
+### properties
+
+ - **weight**: the total weight of the tree. (irrelevant for non-tree graphs)
+
+### methods
+
+ - **add([name])**: create a new vertex. (returns graph)
+ - **edge([vertex], [vertex], [weight])**: create a new edge [possibly weighted]. (returns graph)
+ - **walk([from], [to])**: find a walk from one vertex to another; not always the shortest walk. (returns array of vertices to visit, or null if no possible walk exists)
+ - **algo([name])**: creates a callback for the given algorithm. (returns callback)
+
+### algorithms
+
+some graph theory algorithms for generalized usage. *all these methods are wrapped with a function cache with no way to bust the cache; changing the graph
+after creating one of these callbacks is pointless*.
+
+#### Kruskal's
+
+Find a minimum weight spanning tree by greedy selecting lowest edge:
+
+```javascript
+var G = _.graph()
+var K = G.algo('kruskal')
+
+// creates a new graph with only
+// smallest weighted edges - it will
+// be a graph object but it is a tree
+var T = K()
+```
+
+#### Prim's
+
+#### Dijkstra's
+
+#### A*
