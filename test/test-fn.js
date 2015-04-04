@@ -22,6 +22,6 @@ test('test Fibonacci timing', function (t) {
   f(N)
   var ttn = time() - sn
 
-  console.log('first time: %sms\nsecond time: %sms', tt, ttn)
+  console.log('regular time: %sms\ncached time: %sms', tt, ttn)
   t.ok(tt > ttn, 'wrapper is faster')
 })

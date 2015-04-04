@@ -1,7 +1,7 @@
 var _ = require('../')
 var test = require('tape')
 
-test('simple prim est', function (t) {
+test('simple prim test', function (t) {
   var h, g = _.graph()
 
   _.seal(
