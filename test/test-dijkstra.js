@@ -22,8 +22,8 @@ test('simple Dijkstra\'s test', function (t) {
   r = g.algo('dijkstra')('a', 'd')
 
   t.equal(r.weight, 18, 'reached proper minimum weight')
-  t.ok(r.edges.length === 3 || r.edges.length === 5, 'traversed right amount of edges')
-  t.ok(r.walk.length === 4 || r.walk.length === 6, 'visited right amount of vertices')
+  t.equal(r.edges.length, 3, 'traversed right amount of edges')
+  t.equal(r.walk.length, 4, 'visited right amount of vertices')
 
   t.end()
 })
