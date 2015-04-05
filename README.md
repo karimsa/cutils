@@ -178,9 +178,12 @@ Find the shortest path between two vertices:
 var G = _.graph()
 var D = G.algo('dijkstra')
 
-// creates an array of vertices in the
-// order they should be followed in the
-// shortest path from A to B
+// returns a result object that looks like this:
+// {
+//     walk: ['a', 'b', ...] // an array of vertices to walk through (in order)
+//   , edges: [{ a: 'a', b: 'b', weight: 0 }, ...] // an array of edges to traverse to walk through (in order)
+//   , weight: 0 // the total weight of the path
+// }
 // will return null if path is not possible
 var path = D('A', 'B')
 ```
