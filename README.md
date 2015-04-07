@@ -98,6 +98,62 @@ var walk = g.walk('a', 'c')
 
 *Busting the cache: just pass a random value as an argument to the function you're calling. i.e. to bust the cache for the 5th fibonacci term, run: fib(5, 'random').*
 
+## Stacks
+
+Stacks are like arrays except they recept the LIFO rule.
+
+### methods
+
+ - **first()**: gets the first element off the stack (elm at [0]).
+ - **last()**: gets the last element off the stack (elm at [length - 1]).
+ - **pop()**: removes the first element off the stack. (returns the element)
+
+*All other methods are carried down from the super class Array.*
+
+## Priority Stacks
+
+A priority stack (or queue) operates like a stack except that it keeps the stack sorted
+at all times.
+
+### constructor
+
+The constructor takes two parameters: a key (optional) and a comparator (optional). The key is a static string key
+of which property to sort by within the stack.
+
+Example:
+
+```javascript
+var p = _.priority('age')
+
+p.add({ age: 10, name: 'John' })
+p.add({ age:  5, name: 'Jack' })
+p.add({ age: 15, name: 'Jill' })
+
+p.first() // should return { age: 15, name: 'Jill' }
+```
+
+The comparator must return true/false, and will receive two elements as parameters.
+
+Example:
+
+```javascript
+var p = _.priority(undefined, function (a, b) {
+  return (a - b) < 0
+})
+
+p.add(10)
+p.add(5)
+p.add(15)
+
+p.first() // should be 5
+```
+
+### methods
+
+ - **add(element)**: add an element and fix the order.
+
+*All other methods are from Stack or Array.*
+
 ## Graph Theory
 
 Graphs are pretty simple structures in this utility set; you just create them, and add vertices and
