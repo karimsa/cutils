@@ -28,5 +28,6 @@ module.exports = {
   // adding these things to the prototype slows
   // things down too much; and these are speedier
   // implementations
+  , dup: require('./lib/dup.js')
   , startsWith: require('./lib/strings/startsWith.js')
 }
