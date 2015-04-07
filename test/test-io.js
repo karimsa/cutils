@@ -12,10 +12,10 @@ test('test io', function (t) {
   _.describe({
     num: 4,
     try: 2,
+    cases: 2,
     dir: __dirname,
     exit: false,
     format: [
-      '%n',
       '%d %w %f %s'
     ],
     fn: function (inputs, next) {
