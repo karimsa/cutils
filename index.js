@@ -19,6 +19,7 @@ module.exports = {
 
   // stacks
   , stack: require('./lib/stack.js')
+  , priority: require('./lib/priority.js')
 
   // a useful tool to handle i/o for solution
   // writing; see README.md
