@@ -17,6 +17,9 @@ module.exports = {
   , tree: require('./lib/graph/tree.js')
   , graph: require('./lib/graph/index.js')
 
+  // stacks
+  , stack: require('./lib/stack.js')
+
   // a useful tool to handle i/o for solution
   // writing; see README.md
   , describe: require('./lib/io.js')
