@@ -2,7 +2,12 @@ var test = require('tape')
 var _ = require('../')
 
 test('test io', function (t) {
-  t.plan(18)
+  var st = +new Date
+  t.plan(20)
+
+  t.throws(function () {
+    _.describe({})
+  }, false, 'logic-less implementation throws')
 
   _.describe({
     num: 4,
