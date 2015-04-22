@@ -1,5 +1,5 @@
 var test = require('tape')
-var cutils = require('../')
+var _ = require('../')
 
 var time = function () { return +new Date }
 var f = function (n) {
@@ -16,12 +16,12 @@ test('test Fibonacci timing', function (t) {
   f(N)
   var tt = time() - s
 
-  f = cutils.R.fn(f)
+  f = _.fn(f)
 
   var sn = time()
   f(N)
   var ttn = time() - sn
 
-  console.log('first time: %sms\nsecond time: %sms', tt, ttn)
+  console.log('regular time: %sms\ncached time: %sms', tt, ttn)
   t.ok(tt > ttn, 'wrapper is faster')
 })
