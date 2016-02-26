@@ -2,6 +2,8 @@
 
 some utilities for the contest.
 
+[![NPM](https://nodei.co/npm/cutils.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/cutils/)
+
 ## I/O
 
 A utility for auto-parsing and reading data is built into cutils for quick
