@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+- 5.3.0
+deploy:
+  provider: npm
+  email: contact.vvbka@gmail.com
+  api_key:
+    secure: zYugWDKS4DoVKT3YrcpsMLu9OJH6fdfxR1NLGe11JXP2lix5GpKLTkpl8Io/ZZnm4AxoamlZX/OUvCMeS4fWzZzz8HhlNoFmXJPg/TwJtE1GLHZjJ3bC1R+mtcDGGwpVsuRyn5gSzS5nNODNsDcUGgfZpR9mLkZeBXndPdwCAdluA5NZMMJoYOQhX0WUtmNWwz1Ok/Ug8HDuSzujbyY1dwz1HODUxwQhLLuJnkx0adGf6ezLv4o3EHtRjuhRGp2gN3108WvUiNB1R6r7ujSjQDdyXaIO7n5N+PQbaUFCHEQsCUrpysl4TszaczK675DUm1UFT7oLyonIkDZAcPfO6MBHK93DtwPvTndmVx4WMlH+2BcIO3HLd8OzOKZa6dL2n9GEZegecyLX/92wUgvp8d1MsLfuQfcaSg83in/Gt8foJIIX1d4VLHLfWyQY1dtQkdrUnK5AFHQi4hbIew6tEg/+L+yIv2YGvJd9siikhaJqDp7w2B3XCAreOswY2cZ48JxZNZPfbylcEjI7zu2YvXfEKFJxBalk3zjdLfPd5A+0kz4xEWJRBesaErEmu0iyO8dFTd4T9rUt1hNKE5n7Uk2TbYy3qGIWWARbg5zlQ9+x/htUpOBmMr1S0qstX0EhM7ZB/MFg7HQ1hEK3R8l6NAS1Q3rL4AxCkP2A7HTEx2M=
+  on:
+    repo: vvbka/cutils
