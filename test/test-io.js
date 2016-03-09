@@ -3,7 +3,7 @@ var _ = require('../')
 
 test('test io', function (t) {
   var st = +new Date
-  t.plan(20)
+  t.plan(19)
 
   t.throws(function () {
     _.describe({})
