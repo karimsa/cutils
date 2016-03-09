@@ -11,11 +11,11 @@ test('test priority stack', function (t) {
   p.push(18)
   p.push(4)
 
-  t.equal(p.first(), 13, 'first element is right')
-  t.equal(p.last(), 4, 'last element is correct')
+  t.equal(p.first(), 4, 'first element is right')
+  t.equal(p.last(), 13, 'last element is correct')
 
-  t.equal(p.pop(), 13, 'pops off correct element')
-  t.equal(p.first(), 7, 'next element is correct')
+  t.equal(p.pop(), 4, 'pops off correct element')
+  t.equal(p.first(), 18, 'next element is correct')
 
   t.end()
 })
