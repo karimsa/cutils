@@ -1,4 +1,4 @@
-# Contest UTILS [![Build Status](http://img.shields.io/travis/vvbka/cutils.svg?style=flat)](https://travis-ci.org/vvbka/cutils)
+# Contest UTILS [![Build Status](http://img.shields.io/travis/karimsa/cutils.svg?style=flat)](https://travis-ci.org/karimsa/cutils)
 
 some utilities for the contest.
 

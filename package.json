@@ -1,6 +1,6 @@
 {
   "name": "cutils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "some programming utilities for the contest.",
   "main": "index.js",
   "bin": {
@@ -18,13 +18,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/vbka/cutils.git"
+    "url": "https://github.com/karimsa/cutils.git"
   },
   "keywords": [
     "utilities",
     "contest"
   ],
-  "author": "Karim Alibhai, Valen Varangu-Booth",
+  "author": "Karim Alibhai",
   "license": "MIT",
   "devDependencies": {
     "colortape": "^0.1.1",

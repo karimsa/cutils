@@ -3,7 +3,6 @@
  * some utilities for the contest.
  *
  * Copyright (C) 2015 Karim Alibhai.
- * Copyright (C) 2015 Valen Varangu Booth.
  **/
 
 "use strict";
